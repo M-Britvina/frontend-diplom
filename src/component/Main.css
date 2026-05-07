@@ -1,0 +1,177 @@
+.about {
+    padding-left: 258px;
+    padding-top: 144px;
+    padding-bottom: 90px;
+    padding-right: 314px;
+    color: #292929
+;
+}
+
+.about-header {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+}
+
+.about-content {
+    border-left: 9px solid #FFA800;
+    padding-left: 19px;
+    margin-top: 30px;
+}
+
+.about-text {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.about-text-bold {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.how-it-works {
+    background-image: url("../../public/img/rails.png");
+    background-size: 100%;
+    padding-top: 60px;
+    padding-left: 252px;
+    padding-right: 268px;
+    color: white;
+}
+
+.how-it-works-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.how-it-works-header {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+}
+
+.how-it-works-button {
+    border: 1px solid #FFFFFF;
+    padding-left: 77px;
+    padding-right: 77px;
+
+    height: 60px;
+
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    background-color: #ffffff00;
+    color: white;
+}
+
+.how-it-works-button:hover {
+    background-color: #FFCA62;
+    color: #2D2B2F;
+    border: none;
+}
+
+.how-it-works-button:active {
+    background-color: white;
+}
+
+.how-it-works-content {
+    padding-top: 97px;
+    padding-bottom: 90px;
+    padding-left: 260px;
+    padding-right: 260px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.how-it-works-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 225px;
+}
+
+.how-it-works-icon {
+    margin-bottom: 34px;
+}
+
+.how-it-works-text {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+}
+
+.feedback {
+    background-color: white;
+    padding-top: 152px;
+    padding-left: 252px;
+    padding-right: 268px;
+    padding-bottom: 278px;
+    color: #292929;
+}
+
+.feedback-header {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+}
+
+.feedback-list {
+    display: flex;
+    gap: 85px;
+}
+
+.feedback-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.feedback-image {
+    flex-shrink: 0;
+    width: 206px;
+    height: auto;
+}
+
+.feedback-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-top: 27px;
+    padding-left: 35px;
+    padding-bottom: 16px;
+    max-width: 400px;
+}
+
+.feedback-author {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    margin-bottom: 10px;
+}
+
+.feedback-text {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #928F94;
+    font-style: italic;
+}

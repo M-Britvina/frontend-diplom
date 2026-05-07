@@ -1,0 +1,96 @@
+.contacts {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Две равные колонки */
+    padding-left: 343px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.contact-block {
+    color: #E5E5E5;
+}
+
+.contact-header {
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: white;
+    margin-bottom: 32px;
+}
+
+.contact-item {
+    display: flex;
+    text-decoration: none;
+    margin-bottom: 32px;
+    color: white;
+}
+
+.contact-item:hover {
+    color: #FFCA62
+}
+
+.contact-icon {
+    margin-right: 36px;
+}
+
+.contact-text {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.socials {
+
+}
+
+.social-link {
+    color: #E5E5E5;
+    margin-right: 48px;
+}
+
+.social-icon:hover {
+    color: #FFCA62
+}
+
+footer {
+    background-color: #2D2B2F;
+    color: #E5E5E5;
+}
+
+.footer {
+    display: flex;
+    align-content: space-between;
+    padding: 20px 258px;
+}
+
+.footer-logo {
+    color: #E5E5E5;
+    font-size: 36px;
+    font-weight: 900;
+}
+
+.footer-up-button {
+    margin: 0 auto;
+    height: 36px;
+    width: 36px;
+    border: 1px solid #E5E5E5;
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+    color: #E5E5E5;
+}
+
+.footer-up-button:hover {
+    border: 1px solid #FFCA62;
+    color:#FFCA62
+}
+
+.footer-date {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
