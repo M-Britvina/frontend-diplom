@@ -8,13 +8,13 @@ const Header = () => {
                 <nav className="menu">
                     <ul className="menu-list">
                         <li className="menu-item">
-                            <a className="menu-item-link" href="/#about">О нас</a></li>
+                            <a className="menu-item-link" href={`${process.env.PUBLIC_URL}/#about`}>О нас</a></li>
                         <li className="menu-item">
-                            <a className="menu-item-link" href="/#how-it-works">Как это работает</a></li>
+                            <a className="menu-item-link" href={`${process.env.PUBLIC_URL}/#how-it-works`}>Как это работает</a></li>
                         <li className="menu-item">
-                            <a className="menu-item-link" href="/#feedback">Отзывы</a></li>
+                            <a className="menu-item-link" href={`${process.env.PUBLIC_URL}/#feedback`}>Отзывы</a></li>
                         <li className="menu-item">
-                            <a className="menu-item-link" href="/#contacts">Контакты</a></li>
+                            <a className="menu-item-link" href={`${process.env.PUBLIC_URL}/#contacts`}>Контакты</a></li>
                     </ul>
                 </nav>
             </div>
