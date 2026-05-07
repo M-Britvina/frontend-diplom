@@ -1,4 +1,3 @@
-import { NavLink } from "react-router";
 import './Main.css';
 
 const Main = () => {
@@ -22,15 +21,15 @@ const Main = () => {
                 </div>
                 <div className="how-it-works-content">
                     <div className="how-it-works-item">
-                        <img className="how-it-works-icon" src="/img/how-1.png"/>
+                        <img className="how-it-works-icon" src="/img/how-1.png" alt="Иконка удобства для заказа на сайт"/>
                         <div className="how-it-works-text">Удобный заказ на сайте</div>
                     </div>
                     <div className="how-it-works-item">
-                        <img className="how-it-works-icon" src="/img/how-2.png"/>
+                        <img className="how-it-works-icon" src="/img/how-2.png" alt="Иконка отутствия необходимости ехать в офис"/>
                         <div className="how-it-works-text">Нет необходимости ехать в офис</div>
                     </div>
                     <div className="how-it-works-item">
-                        <img className="how-it-works-icon" src="/img/how-3.png"/>
+                        <img className="how-it-works-icon" src="/img/how-3.png" alt="Иконка огромного выбора направлений"/>
                         <div className="how-it-works-text">Огромный выбор направлений</div>
                     </div>
                 </div>
@@ -39,14 +38,14 @@ const Main = () => {
                 <h1 className="feedback-header">Отзывы</h1>
                 <div className="feedback-list">
                     <div className="feedback-item">
-                        <img className="feedback-image" src="/img/feedback-1.png"/>
+                        <img className="feedback-image" src="/img/feedback-1.png" alt="Фото автора отзыва"/>
                         <div className="feedback-content">
                             <div className="feedback-author">Екатерина Вальнова</div>
                             <q className="feedback-text">Доброжелательные подсказки на всех этапах помогут правильно заполнить поля и без затруднений купить авиа или ж/д билет, даже если вы заказываете онлайн билет впервые.</q>
                         </div>"
                     </div>
                     <div className="feedback-item">
-                        <img className="feedback-image" src="/img/feedback-2.png"/>
+                        <img className="feedback-image" src="/img/feedback-2.png" alt="Фото автора отзыва"/>
                         <div className="feedback-content">
                             <div className="feedback-author">Александр Стрыкало</div>
                             <q className="feedback-text">СМС-сопровождение до посадки. Сразу после оплаты ж/д билетов и за 3 часа до отправления мы пришлем вам СМС-напоминание о поездке.</q>
