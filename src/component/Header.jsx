@@ -29,7 +29,7 @@ const Header = () => {
                                     <input id="location-from" type="text" className="search-form-input input-location-icon" placeholder="Откуда" required />
                                 </div>
                                 <div className="change-from-where">
-                                    <img className="switch-button" src="/img/switch-button.png" />
+                                    <img className="switch-button" src="/img/switch-button.png" alt="Поменять местами пунтк отправки и назначения"/>
                                 </div>
                                 <div className="where-field">
                                     <input id="location-to" type="text" className="search-form-input input-location-icon" placeholder="Куда" required />
