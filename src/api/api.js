@@ -14,12 +14,52 @@ const handleResponse = async (response) => {
     return await response.json();
 }
 
+function buildUrl(baseUrl, params) {
+    const filteredParams = Object.fromEntries(
+        Object.entries(params).filter(([, value]) => value !== undefined && value !== null && value !== '')
+    );
+    
+    const queryString = new URLSearchParams(filteredParams).toString();
+    return queryString ? `${baseUrl}?${queryString}` : baseUrl;
+}
+
 export const api = {
 
     subscribe: async (email) => {
         try {
             const response = await fetch(`${API_URL}/subscribe?email=${email}`, {
                 method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                },
+            });
+            return await handleResponse(response);
+        } catch (error) {
+            console.log(error)
+            throw error;
+        }
+    },
+
+    getCities: async(substr) => {
+        try {
+            const response = await fetch(`${API_URL}/routes/cities?name=${substr}`, {
+                method: 'GET',
+                headers: {
+                    'Accept': 'application/json',
+                },
+            });
+            return await handleResponse(response);
+        } catch (error) {
+            console.log(error)
+            throw error;
+        }
+    },
+
+    getRoutes: async(params) => {
+        const url = buildUrl(`${API_URL}/routes`, params);
+        try {
+            const response = await fetch(url, {
+                method: 'GET',
                 headers: {
                     'Accept': 'application/json',
                 },

@@ -1,10 +1,26 @@
-import { NavLink } from "react-router";
+import './TrainChooser.css';
+import Train from './Train';
 
-const TrainChooser = () => {
+const TrainChooser = ({totalCount, trains}) => {
     return (
-        <div className="main">
-            TrainChooser
-            <NavLink to="/place-chooser" end>choose place</NavLink>
+        <div className="train-chooser">
+            <div className="trains-list-header">
+                <span className="trains-list-header-counter">Найдено {!totalCount ? 0 : totalCount}</span>
+            </div>
+            <div className="trains-list">
+                {!trains || trains.length === 0 ? 
+                    (<div className="trains-list-empty">Поездов не найдено</div>)
+                    :
+                    (
+                        trains.map((train) => (
+                        <Train
+                            key={train._id}
+                            train={train}
+                        />
+                    ))
+                    )
+                }
+            </div>
         </div>
     )
 }

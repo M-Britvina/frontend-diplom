@@ -1,6 +1,7 @@
 import './Header.css';
+import SearchForm from './SearchForm';
 
-const Header = () => {
+const Header = ({handleSearchTrains}) => {
     return (
         <header className="welcome">
             <div className="header-top">
@@ -20,38 +21,7 @@ const Header = () => {
             </div>
             <div className="header-bottom">
                 <div className="slogan">Вся жизнь - <strong>путешествие!</strong></div>
-                <div className="search-ticket">
-                    <form action="#0" method="get" className="search-ticket-form">
-                        <div className="form-row">
-                            <h2 className="form-label">Направление</h2>
-                            <div className="input-row">
-                                <div className="from-field">
-                                    <input id="location-from" type="text" className="search-form-input input-location-icon" placeholder="Откуда" required />
-                                </div>
-                                <div className="change-from-where">
-                                    <img className="switch-button"  src={`${process.env.PUBLIC_URL}/img/switch-button.png`} alt="Поменять местами пунтк отправки и назначения"/>
-                                </div>
-                                <div className="where-field">
-                                    <input id="location-to" type="text" className="search-form-input input-location-icon" placeholder="Куда" required />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="form-row">
-                            <h2 className="form-label">Дата</h2>
-                            <div className="input-row">
-                                <div className="from-date-choice">
-                                    <input id="date-from" type="text" className="search-form-input input-calendar-icon" placeholder="ДД/ММ/ГГ" />
-                                </div>
-                                <div className="to-date-choice">
-                                    <input id="date-to" type="text" className="search-form-input input-calendar-icon" placeholder="ДД/ММ/ГГ" />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="form-row form-row-right">
-                            <button type="submit" className="search-submit-button">Найти билеты</button>
-                        </div>
-                    </form>
-                </div>
+                <SearchForm handleSearchTrains={handleSearchTrains}/>
             </div>
         </header>
     );

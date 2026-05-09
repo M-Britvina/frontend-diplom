@@ -1,0 +1,119 @@
+.train {
+    display: flex;
+    margin-bottom: 50px;
+    box-shadow: 0px 2px 2px 0px #0000004D;
+    max-width: 960px;
+}
+
+.train-header {
+    background-color: #E4E0E9;
+    padding-top: 58px;
+}
+
+.train-header-title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+
+}
+
+.train-header-icon {
+    text-align: center;
+}
+
+.train-main {
+    background-color: white;
+    padding-left: 40px;
+    padding-top: 54px;
+    padding-right: 36px;
+}
+
+.train-departure {
+    color: black;
+    display: flex;
+}
+
+.train-departure-to {
+    color: black;
+}
+
+.train-departure-time {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.train-departure-city {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: capitalize;
+}
+
+.train-departure-station {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #928F94;
+}
+
+.train-duration {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.train-duration-time {
+    color: #C4C4C4;
+}
+
+.train-places {
+    background-color: white;
+    border-left: 1px solid #E5E5E5;
+    padding-top: 40px;
+    padding-left: 27px;
+}
+
+.seat {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #928F94;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 равных столбца */
+    gap: 5px;
+    align-items: end;
+    margin-bottom: 10px
+}
+
+.seat-type {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #3E3C41;
+}
+
+.seat-count {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #FFA800;
+}
+
+.seat-price {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #2D2B2F;
+}

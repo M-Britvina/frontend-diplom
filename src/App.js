@@ -15,6 +15,7 @@ import Modal from './component/Modal';
 function App() {
   const [ modalData, setModalData] = useState({});
   const [ isModalOpen, setIsModalOpen ] = useState(false);
+  const [ findingTrains, setFindingTrains ] = useState([]);
 
   const openModal = (isError, content) => {
     console.log('open modal');
@@ -32,14 +33,19 @@ function App() {
     setIsModalOpen(false);
   }
 
+  const handleSearchTrains = (trains) => {
+    setFindingTrains(trains);
+    console.log(trains);
+  }
+
   return (
     <>
       <Modal isOpen={isModalOpen} isError={modalData.isError} content={modalData.content} onClose={closeModal}/>
-      <Header />
+      <Header handleSearchTrains={handleSearchTrains}/>
       <main>
         <Routes>
             <Route index element={<Main />} />
-            <Route path="train-chooser" element={<TrainChooser />}/>
+            <Route path="train-chooser" element={<TrainChooser totalCount={findingTrains.total_count} trains={findingTrains.items}/>}/>
             <Route path="place-chooser" element={<PlaceChooser />} />
             <Route path="passengers" element={<Passengers />} />
             <Route path="payment" element={<Payment />} />
