@@ -1,7 +1,7 @@
 import './TrainChooser.css';
 import Train from './Train';
 
-const TrainChooser = ({totalCount, trains}) => {
+const TrainChooser = ({totalCount, trains, handleSearchSeats}) => {
     return (
         <div className="train-chooser">
             <div className="trains-list-header">
@@ -14,8 +14,9 @@ const TrainChooser = ({totalCount, trains}) => {
                     (
                         trains.map((train) => (
                         <Train
-                            key={train._id}
+                            key={train.departure._id}
                             train={train}
+                            handleSearchSeats={handleSearchSeats}
                         />
                     ))
                     )

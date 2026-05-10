@@ -1,4 +1,6 @@
 import './Train.css';
+import { api } from '../api/api';
+import { useNavigate } from 'react-router';
 
 const Seat = ({title, count, price}) => {
     return (
@@ -21,7 +23,21 @@ const Seat = ({title, count, price}) => {
     )
 }
 
-const Train = ({train}) => {
+const Train = ({train, handleSearchSeats}) => {
+    const navigate = useNavigate();
+
+    const handleChooseTrain = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await api.getSeats(train.departure._id);
+            console.log(train);
+            handleSearchSeats(response, train.departure);
+            navigate('/place-chooser');
+        } catch (error) {
+            console.error('Ошибка:', error);   
+        }
+    }
+
     return (
         <div className='train'>
             <div className='train-header'>
@@ -69,6 +85,7 @@ const Train = ({train}) => {
                         count={train.available_seats_info.fourth}
                         price={train.departure.price_info.fourth.bottom_price} />
                 )}
+                <button className='search-seats-button' onClick={handleChooseTrain}>Выбрать место</button>
             </div>
         </div>
     )
@@ -79,5 +96,5 @@ export default Train;
 function secondsToHoursMinutes(seconds) {
   const hours = Math.floor(seconds / 3600);
   const minutes = Math.floor((seconds % 3600) / 60);
-  return `${hours % 24}:${minutes}`;
+  return `${(hours % 24).toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
 }

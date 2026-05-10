@@ -1,0 +1,144 @@
+.place-chooser {
+    padding-left: 258px;
+    padding-top: 95px;
+    padding-bottom: 190px;
+    background-color: #F7F5F9;
+}
+
+.place-chooser-header {
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    color: #292929;
+    margin-bottom: 48px;
+}
+
+.place-chooser-main {
+    background-color: white;
+    border: 1px solid #C4C4C4;
+    box-shadow: 0px 2px 2px 0px #00000040;
+    max-width: 960px;
+}
+
+.place-chooser-main-top {
+    padding-top: 36px;
+    padding-left: 19px;
+    padding-bottom: 32px;
+    display: flex;
+    gap: 10px;
+
+}
+
+.place-chooser-main-top-icon {
+}
+
+.place-chooser-main-top-button {
+    color: #292929;
+    background-color: white;
+    border: 1px solid #292929;
+    padding: 8px 20px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    /* height: 60px; */
+    padding-left: 33px;
+    padding-right: 33px;
+}
+
+.place-chooser-main-top-button:hover {
+    color: #FFA800;
+}
+
+.place-chooser-main-top-button:active {
+    background-color: #FFA800;
+    color: #292929;
+    box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+.train-info {
+    color: black;
+    display: flex;
+    gap: 30px;
+    background-color: #F7F6F6;
+}
+
+.train-info-header {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.train-info-icon {
+    margin: 30px auto;
+}
+
+.train-info-title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #3E3C41
+}
+
+.departure {
+    color: black;
+    display: flex;
+    padding-left: 36px;
+    padding-right: 36px;
+    gap: 30px;
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+}
+
+.departure-from {
+    color: black;
+    margin: 30px auto;
+}
+
+.departure-to {
+    color: black;
+    margin: 30px auto;
+}
+
+.departure-array {
+    margin: auto;
+}
+
+.departure-time {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.departure-city {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: capitalize;
+}
+
+.departure-station {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #928F94;
+}
+
+.duration {
+    display: flex;
+}
+
+.duration-icon {
+    margin:  auto;
+    margin-right: 10px;
+}
+
+.duration-time {
+    margin:  auto;
+}

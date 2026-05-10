@@ -117,3 +117,26 @@
     letter-spacing: 0%;
     color: #2D2B2F;
 }
+
+.search-seats-button {
+    background-color: #FFA800;
+    color: white;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    height: 40px;
+    width: 230px;
+    border: none;
+}
+
+.search-seats-button:hover {
+    box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+.search-seats-button:active {
+    border: 1px solid #FFA800;
+    color: #FFA800;
+    background-color: white;
+}

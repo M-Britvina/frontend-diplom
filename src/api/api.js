@@ -71,4 +71,19 @@ export const api = {
         }
     },
 
+    getSeats: async(departure_id) => {
+        try {
+            const response = await fetch(`${API_URL}/routes/${departure_id}/seats`, {
+                method: 'GET',
+                headers: {
+                    'Accept': 'application/json',
+                },
+            });
+            return await handleResponse(response);
+        } catch (error) {
+            console.log(error)
+            throw error;
+        }
+    }
+
 }
