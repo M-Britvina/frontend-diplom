@@ -78,3 +78,7 @@
     color: #FFA800;
     background-color: #00000000;
 }
+
+.passenger-error {
+    color: red;
+}
