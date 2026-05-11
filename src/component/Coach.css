@@ -1,0 +1,66 @@
+.coach {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.coach-type {
+    color: #928F94;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    margin-bottom: 5px;
+}
+
+.coach-name {
+    color: #292929;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    margin-bottom: 5px;
+}
+
+.coach-seats-block {
+    border: 1px solid black;
+    max-width: 900px;
+}
+
+.coach-seats {
+    display: flex;
+    gap: 10px;
+}
+
+.coach-seat-column {
+    margin-bottom: 20px;
+}
+
+.coach-seat-column:nth-child(odd) {
+    margin-right: 5px;
+}
+
+.coach-seat-column:nth-child(even) {
+    margin-left: 5px;
+}
+
+.coach-seat {
+    height: 40px;
+    width: 40px;
+    color: white;
+    background-color: #928F94;
+    text-align: center;
+    align-content: center;
+}
+
+.coach-seat-available:hover {
+    border: 1px solid #FFA800;
+}
+
+.coach-seat-available {
+    color: #292929;
+    background-color: #C4C4C4;
+}
+
+.coach-seat-selected {
+    background-color: #FFA800;
+}

@@ -1,8 +1,24 @@
+import { useState } from 'react';
 import './PlaceChooser.css';
+import Coach from './Coach';
+import { useNavigate } from 'react-router';
 
 const PlaceChooser = ({seats, departure, handleSelectPlace}) => {
-    console.log(departure);
-    console.log(departure.train);
+    const [selectedPlace, setSelectedPlace] = useState(null);
+    const [selectedCoachId, setSelectedCoachId] = useState(null);
+    const navigate = useNavigate();
+
+    const selectHandler = (index, coachId) => {
+        setSelectedPlace(index);
+        setSelectedCoachId(coachId);
+    }
+
+    const handleNext = (e) => {
+        e.preventDefault();
+        handleSelectPlace(selectedCoachId, selectedPlace);
+        navigate('/passengers');
+    }
+    
     return (
         <div className="place-chooser">
             <div className='place-chooser-header'>
@@ -43,6 +59,26 @@ const PlaceChooser = ({seats, departure, handleSelectPlace}) => {
                         </div>
                     </div>
                 </div>
+                <div className='coaches'>
+                    {!seats || seats.length === 0 ? 
+                    (<div className="coaches-list-empty">Мест не найдено</div>)
+                    :
+                    (
+                        seats.map((coach) => (
+                        <Coach
+                            key={coach.coach._id}
+                            coach={coach.coach}
+                            seats={coach.seats}
+                            selectedIndex={selectedCoachId === coach.coach._id ? selectedPlace : null}
+                            selectHandler={selectHandler}
+                        />
+                    ))
+                    )
+                }
+                </div>
+            </div>
+            <div className='place-chooser-footer'>
+                <button className='place-chooser-button' onClick={handleNext} disabled={selectedPlace === null}>Далее</button>
             </div>
         </div>
     )
