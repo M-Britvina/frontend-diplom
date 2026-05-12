@@ -2,6 +2,7 @@ import './OrderConfirmation.css';
 import { calculatePrice } from '../utils/utils';
 import Train from './Train';
 import { useNavigate } from 'react-router';
+import { api } from '../api/api';
 
 const OrderConfirmation = ({departure, selectedPlace, passenger, payment, handleConfirmation}) => {
     const navigate = useNavigate();
@@ -11,13 +12,48 @@ const OrderConfirmation = ({departure, selectedPlace, passenger, payment, handle
     const handleNext = async (e) => {
         e.preventDefault();
         
-        
-        handleConfirmation({
-            name: payment.name,
-            thirdName: payment.thirdName,
-            cost: cost,
-        });
-        navigate('/success-order');
+        try {
+            const response = await api.order({
+                user: {
+                    first_name: payment.name,
+                    last_name: payment.last_name,
+                    patronymic: payment.thirdName,
+                    phone: payment.phone,
+                    email: payment.email,
+                    payment_method: payment.cash ? "cash" : "online"
+                },
+                departure: {
+                    route_direction_id: departure._id,
+                    seats: [
+                        {
+                        coach_id: selectedPlace.coach._id,
+                        person_info: {
+                            is_adult: true,
+                            first_name: passenger.name,
+                            last_name: passenger.lastName,
+                            patronymic: passenger.thirdName,
+                            gender: true,
+                            birthday: passenger.birtDate,
+                            document_type: "паспорт",
+                            document_data: `${passenger.serial} ${passenger.number}`,
+                        },
+                        seat_number: selectedPlace.place,
+                        is_child: false,
+                        include_children_seat: false
+                        }
+                    ]
+                }
+            });
+            console.log(response);
+            handleConfirmation({
+                name: payment.name,
+                thirdName: payment.thirdName,
+                cost: cost,
+            });
+            navigate('/success-order');
+        } catch (error) {
+            console.error('Ошибка:', error);   
+        }
     }
 
     return (

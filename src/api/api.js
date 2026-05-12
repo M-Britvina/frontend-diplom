@@ -84,6 +84,22 @@ export const api = {
             console.log(error)
             throw error;
         }
+    },
+
+    order: async(order) => {
+        try {
+            const response = await fetch(`${API_URL}/order`, {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                },
+                body: JSON.stringify(order),
+            });
+            return await handleResponse(response);
+        } catch (error) {
+            console.log(error)
+            throw error;
+        }
     }
 
 }
