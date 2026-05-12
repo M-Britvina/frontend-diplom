@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './Passengers.css';
 import { useNavigate } from 'react-router';
+import FormInput from './FormInput';
 
 const Passengers = ({handlePassenger}) => {
     const [formData, setFormData] = useState({
@@ -24,8 +25,6 @@ const Passengers = ({handlePassenger}) => {
     const navigate = useNavigate();
 
     const handleChange = (e) => {
-        console.log(e.target.name);
-        console.log(e.target.value);
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
     };
@@ -53,42 +52,18 @@ const Passengers = ({handlePassenger}) => {
                     </label>
                 </div>
                 <div className="passenger-data">
-                    <label className="passenger-label">
-                        <div>Фамилия</div>
-                        <input name="lastName" className="passenger-input" type="text" value={formData.lastName} required onChange={handleChange}></input>
-                        <div className='passenger-error' hidden={errors.lastName}>Поле не заполнено</div>
-                    </label>
-                    <label className="passenger-label">
-                        <div>Имя</div>
-                        <input name="name" className="passenger-input" type="text" value={formData.name} required onChange={handleChange}></input>
-                        <div className='passenger-error' hidden={errors.name}>Поле не заполнено</div>
-                    </label>
-                    <label className="passenger-label">
-                        <div>Отчество</div>
-                        <input name="thirdName" className="passenger-input" type="text" value={formData.thirdName} required onChange={handleChange}></input>
-                        <div className='passenger-error' hidden={errors.thirdName}>Поле не заполнено</div>
-                    </label>
-                    <label className="passenger-label">
-                        <div>Дата рождения</div>
-                        <input name="birthDate" className="passenger-input" type="date" value={formData.birthDate} required onChange={handleChange}></input>
-                        <div className='passenger-error' hidden={errors.birthDate}>Поле не заполнено</div>
-                    </label>
+                    <FormInput label="Фамилия" name="lastName" value={formData.lastName} handleChange={handleChange} isValid={errors.lastName} textError="Поле не заполнено"/>
+                    <FormInput label="Имя" name="name" value={formData.name} handleChange={handleChange} isValid={errors.name} textError="Поле не заполнено"/>
+                    <FormInput label="Отчество" name="thirdName" value={formData.thirdName} handleChange={handleChange} isValid={errors.thirdName} textError="Поле не заполнено"/>
+                    <FormInput label="Дата рождения" name="birthDate" value={formData.birthDate} handleChange={handleChange} isValid={errors.birthDate} textError="Поле не заполнено" type="date"/>
                 </div>
                 <div className="passenger-identity">
                     <label className="passenger-label">
                         <div>Тип докуммента</div>
                         <input name="documentType" className="passenger-input" type="calendar" value="Паспорт РФ" disabled></input>
                     </label>
-                    <label className="passenger-label">
-                        <div>Серия</div>
-                        <input name="serial" className="passenger-input" type="number" value={formData.serial} required onChange={handleChange}></input>
-                        <div className='passenger-error' hidden={errors.serial}>Серия должна содержать 4 цифры</div>
-                    </label>
-                    <label className="passenger-label">
-                        <div>Номер</div>
-                        <input name="number" className="passenger-input" type="number" value={formData.number} required onChange={handleChange}></input>
-                        <div className='passenger-error' hidden={errors.number}>Номер должен содержать 6 цифр</div>
-                    </label>
+                    <FormInput label="Серия" name="serial" value={formData.serial} handleChange={handleChange} isValid={errors.serial} textError="Серия должна содержать 4 цифры" type="number"/>
+                    <FormInput label="Номер" name="number" value={formData.number} handleChange={handleChange} isValid={errors.number} textError="Номер должен содержать 6 цифр" type="number"/>
                 </div>
             </form>
 
