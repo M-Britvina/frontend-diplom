@@ -1,11 +1,11 @@
-.passengers {
+.payments {
     padding-left: 258px;
     padding-top: 95px;
     padding-bottom: 190px;
     background-color: #F7F5F9;
 }
 
-.passenger {
+.payment {
     max-width: 1030px;
     margin: 35px;
     background-color: #FFFFFF;
@@ -13,7 +13,7 @@
     box-shadow: 0px 2px 2px 0px #00000040;
 }
 
-.passenger-header {
+.payment-header {
     padding: 35px;
     background-color: #F9F9F9;
     color: #292929;
@@ -24,7 +24,7 @@
     border-bottom: 1px solid #928F94
 }
 
-.passenger-data {
+.payment-data {
     display: flex;
     gap: 25px;
     flex-wrap: wrap;
@@ -34,16 +34,7 @@
     
 }
 
-.passenger-identity {
-    display: flex;
-    gap: 25px;
-    padding-left: 35px;
-    border-top: 1px solid #928F94;
-    padding-top: 35px;
-    padding-bottom: 35px;
-}
-
-.passenger-button {
+.payment-button {
     font-weight: 700;
     font-size: 24px;
     line-height: 100%;
@@ -51,30 +42,30 @@
     text-align: center;
     text-transform: uppercase;
     height: 60px;
-    width: 220px;
+    width: 320px;
     border: none;
 
     background-color: #FFA800;
     color: white
 }
 
-.passenger-footer {
+.payment-footer {
     display: flex;
     justify-content: flex-end;
     max-width: 960px;
     padding-top: 100px;
 }
 
-.passenger-button:disabled {
+.payment-button:disabled {
     background-color: #928F94;
 }
 
-.passenger-button:hover {
+.payment-button:hover {
     box-shadow: 0px 4px 4px 0px #00000040;
 
 }
 
-.passenger-button:active {
+.payment-button:active {
     color: #FFA800;
     background-color: #00000000;
 }

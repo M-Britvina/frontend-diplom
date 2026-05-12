@@ -20,6 +20,7 @@ function App() {
   const [ findingsSeats, setFindingSeats ] = useState([]);
   const [ selectedPlace, setSelectedPlace ] = useState({});
   const [ passenger, setPassenger] = useState(null);
+  const [ payment, setPayment ] = useState(null);
 
   const openModal = (isError, content) => {
     console.log('open modal');
@@ -58,6 +59,11 @@ function App() {
     console.log(passenger);
   }
 
+  const handlePayment =(payment) => {
+    setPayment(payment);
+    console.log(payment);
+  }
+
   return (
     <>
       <Modal isOpen={isModalOpen} isError={modalData.isError} content={modalData.content} onClose={closeModal}/>
@@ -77,11 +83,13 @@ function App() {
             <Route path="passengers" element={<Passengers handlePassenger={handlePassenger}/>} />
             <Route path="payment" element={<Payment 
               departure={selectedTrain}
-              place={selectedPlace} />} />
+              place={selectedPlace}
+              handlePayment={handlePayment} />} />
             <Route path="order-confirmation" element={<OrderConfirmation 
               departure={selectedTrain}
               place={selectedPlace}
-              passenger={passenger}/>} />
+              passenger={passenger}
+              payment={payment} />} />
             <Route path="success-order" element={<SuccessOrder />} />
         </Routes>
 
