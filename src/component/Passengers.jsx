@@ -44,9 +44,14 @@ const Passengers = ({handlePassenger}) => {
     return (
         <div className="passengers">
             <form className="passenger" onSubmit={handleNext}>
-                <label className="passenger-label">
-                    <input name="type" className="passenger-input" type="text" value="Взрослый" disabled></input>
-                </label>
+                <div className='passenger-header'>
+                    Пассажир
+                </div>
+                <div className="passenger-data">
+                    <label className="passenger-label">
+                        <input name="type" className="passenger-input" type="text" value="Взрослый" disabled></input>
+                    </label>
+                </div>
                 <div className="passenger-data">
                     <label className="passenger-label">
                         <div>Фамилия</div>
