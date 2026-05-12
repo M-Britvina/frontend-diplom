@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './Passengers.css';
 import { useNavigate } from 'react-router';
 
-const Passengers = () => {
+const Passengers = ({handlePassenger}) => {
     const [formData, setFormData] = useState({
         name: '',
         lastName: '',
@@ -36,6 +36,7 @@ const Passengers = () => {
         e.preventDefault();
         
         if (isFormValid) {
+            handlePassenger(formData);
             navigate('/payment');
         }
     }
