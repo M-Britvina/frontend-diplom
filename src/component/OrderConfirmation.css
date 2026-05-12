@@ -1,0 +1,128 @@
+.order-confirmation {
+    padding-left: 258px;
+    padding-top: 95px;
+    padding-bottom: 190px;
+    background-color: #F7F5F9;
+}
+
+.order-data {
+    max-width: 1030px;
+    margin: 35px;
+    background-color: #FFFFFF;
+    border: 1px solid #C4C4C4;
+    box-shadow: 0px 2px 2px 0px #00000040;
+}
+
+.order-data-header {
+    padding: 35px;
+    background-color: #F9F9F9;
+    color: #292929;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    border-bottom: 1px solid #928F94
+}
+
+.order-data-content {
+    display: flex;
+    
+}
+
+.passenger-data {
+    display: flex;
+    gap:45px;
+        min-width: 680px;
+}
+
+.passenger-data-image {
+
+}
+
+.passenger-data-info {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.passenger-data-info-main {
+    color: #292929;
+    margin-bottom: 10px;
+}
+
+.passenger-data-info-second {
+    color: #928F94;
+    margin-bottom: 5px;
+}
+
+.price-data {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #292929;
+    border-left: 1px solid #E5E5E5;
+}
+
+.price-data-text {
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+.price-data-cost {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.price-data-currency {
+
+}
+
+.payment-type {
+    padding: 40px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    padding: 40px;
+}
+
+
+.confirmation-footer {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 960px;
+    padding-top: 100px;
+}
+
+.confirmation-button {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    text-transform: uppercase;
+    height: 60px;
+    width: 320px;
+    border: none;
+
+    background-color: #FFA800;
+    color: white
+}
+
+.confirmation-button:disabled {
+    background-color: #928F94;
+}
+
+.confirmation-button:hover {
+    box-shadow: 0px 4px 4px 0px #00000040;
+
+}
+
+.confirmation-button:active {
+    color: #FFA800;
+    background-color: #00000000;
+}

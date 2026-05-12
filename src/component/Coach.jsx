@@ -1,9 +1,10 @@
 import './Coach.css';
 
 const Coach = ({coach, seats, selectedIndex, selectHandler}) => {
-    const placeSelectHandler = (seat, coachId) => {
+    const placeSelectHandler = (seat, coach) => {
+        console.log({seat, coach});
         if (seat.available) {
-            selectHandler(seat.index, coachId)
+            selectHandler(seat.index, coach)
         }
     }
 
@@ -20,7 +21,7 @@ const Coach = ({coach, seats, selectedIndex, selectHandler}) => {
                                     <div className={"coach-seat " + 
                                         (seat.available ? "coach-seat-available " : "") + 
                                         (selectedIndex && selectedIndex === seat.index ? "coach-seat-selected" : "")}
-                                        onClick={() => placeSelectHandler(seat, coach._id)}>{seat.index}</div>
+                                        onClick={() => placeSelectHandler(seat, coach)}>{seat.index}</div>
                                 </div>
                             ))
                         }
@@ -44,11 +45,11 @@ const Coach = ({coach, seats, selectedIndex, selectHandler}) => {
                                     {column.top && <div className={"coach-seat " + 
                                     (column.top.available ? "coach-seat-available " : "") + 
                                     (selectedIndex && selectedIndex === column.top.index ? "coach-seat-selected" : "")}
-                                        onClick={() => placeSelectHandler(column.top, coach._id)}>{column.top.index}</div>}
+                                        onClick={() => placeSelectHandler(column.top, coach)}>{column.top.index}</div>}
                                     {column.bottom && <div className={"coach-seat " + 
                                     (column.bottom.available ? "coach-seat-available " : "") + 
                                     (selectedIndex && selectedIndex === column.bottom.index ? "coach-seat-selected" : "")}
-                                        onClick={() => placeSelectHandler(column.bottom, coach._id)}>{column.bottom.index}</div>}
+                                        onClick={() => placeSelectHandler(column.bottom, coach)}>{column.bottom.index}</div>}
                                 </div>
                             ))
                         }
@@ -61,7 +62,6 @@ const Coach = ({coach, seats, selectedIndex, selectHandler}) => {
     if (coach.class_type === "third") {
         const columns = getColumnData(0, seats);
         const sideSeats = getSideData(seats);
-        console.log(sideSeats);
         return (
             <div className='coach'>
                 <div className='coach-type'>Плацкарт</div>
@@ -74,11 +74,11 @@ const Coach = ({coach, seats, selectedIndex, selectHandler}) => {
                                     {column.top && <div className={"coach-seat " + 
                                     (column.top.available ? "coach-seat-available " : "") + 
                                     (selectedIndex && selectedIndex === column.top.index ? "coach-seat-selected" : "")}
-                                        onClick={() => placeSelectHandler(column.top, coach._id)}>{column.top.index}</div>}
+                                        onClick={() => placeSelectHandler(column.top, coach)}>{column.top.index}</div>}
                                     {column.bottom && <div className={"coach-seat " + 
                                     (column.bottom.available ? "coach-seat-available " : "") + 
                                     (selectedIndex && selectedIndex === column.bottom.index ? "coach-seat-selected" : "")}
-                                        onClick={() => placeSelectHandler(column.bottom, coach._id)}>{column.bottom.index}</div>}
+                                        onClick={() => placeSelectHandler(column.bottom, coach)}>{column.bottom.index}</div>}
                                 </div>
                             ))
                         }
@@ -90,7 +90,7 @@ const Coach = ({coach, seats, selectedIndex, selectHandler}) => {
                                     <div className={"coach-seat " + 
                                         (seat.available ? "coach-seat-available " : "") + 
                                         (selectedIndex && selectedIndex === seat.index ? "coach-seat-selected" : "")}
-                                        onClick={() => placeSelectHandler(seat, coach._id)}>{seat.index}</div>
+                                        onClick={() => placeSelectHandler(seat, coach)}>{seat.index}</div>
                                 </div>
                             ))
                         }
@@ -115,11 +115,11 @@ const Coach = ({coach, seats, selectedIndex, selectHandler}) => {
                                     {column.top && <div className={"coach-seat " + 
                                     (column.top.available ? "coach-seat-available " : "") + 
                                     (selectedIndex && selectedIndex === column.top.index ? "coach-seat-selected" : "")}
-                                        onClick={() => placeSelectHandler(column.top, coach._id)}>{column.top.index}</div>}
+                                        onClick={() => placeSelectHandler(column.top, coach)}>{column.top.index}</div>}
                                     {column.bottom && <div className={"coach-seat " + 
                                     (column.bottom.available ? "coach-seat-available " : "") + 
                                     (selectedIndex && selectedIndex === column.bottom.index ? "coach-seat-selected" : "")}
-                                        onClick={() => placeSelectHandler(column.bottom, coach._id)}>{column.bottom.index}</div>}
+                                        onClick={() => placeSelectHandler(column.bottom, coach)}>{column.bottom.index}</div>}
                                 </div>
                             ))
                         }
@@ -131,11 +131,11 @@ const Coach = ({coach, seats, selectedIndex, selectHandler}) => {
                                     {column.top && <div className={"coach-seat " + 
                                     (column.top.available ? "coach-seat-available " : "") + 
                                     (selectedIndex && selectedIndex === column.top.index ? "coach-seat-selected" : "")}
-                                        onClick={() => placeSelectHandler(column.top, coach._id)}>{column.top.index}</div>}
+                                        onClick={() => placeSelectHandler(column.top, coach)}>{column.top.index}</div>}
                                     {column.bottom && <div className={"coach-seat " + 
                                     (column.bottom.available ? "coach-seat-available " : "") + 
                                     (selectedIndex && selectedIndex === column.bottom.index ? "coach-seat-selected" : "")}
-                                        onClick={() => placeSelectHandler(column.bottom, coach._id)}>{column.bottom.index}</div>}
+                                        onClick={() => placeSelectHandler(column.bottom, coach)}>{column.bottom.index}</div>}
                                 </div>
                             ))
                         }

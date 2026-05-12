@@ -5,17 +5,17 @@ import { useNavigate } from 'react-router';
 
 const PlaceChooser = ({seats, departure, handleSelectPlace}) => {
     const [selectedPlace, setSelectedPlace] = useState(null);
-    const [selectedCoachId, setSelectedCoachId] = useState(null);
+    const [selectedCoach, setSelectedCoach] = useState(null);
     const navigate = useNavigate();
 
-    const selectHandler = (index, coachId) => {
+    const selectHandler = (index, coach) => {
         setSelectedPlace(index);
-        setSelectedCoachId(coachId);
+        setSelectedCoach(coach);
     }
 
     const handleNext = (e) => {
         e.preventDefault();
-        handleSelectPlace(selectedCoachId, selectedPlace);
+        handleSelectPlace(selectedCoach, selectedPlace);
         navigate('/passengers');
     }
     
@@ -69,7 +69,7 @@ const PlaceChooser = ({seats, departure, handleSelectPlace}) => {
                             key={coach.coach._id}
                             coach={coach.coach}
                             seats={coach.seats}
-                            selectedIndex={selectedCoachId === coach.coach._id ? selectedPlace : null}
+                            selectedIndex={selectedCoach && selectedCoach._id === coach.coach._id ? selectedPlace : null}
                             selectHandler={selectHandler}
                         />
                     ))

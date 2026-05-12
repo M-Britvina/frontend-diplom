@@ -15,7 +15,7 @@ const TrainChooser = ({totalCount, trains, handleSearchSeats}) => {
                         trains.map((train) => (
                         <Train
                             key={train.departure._id}
-                            train={train}
+                            departure={train.departure}
                             handleSearchSeats={handleSearchSeats}
                         />
                     ))

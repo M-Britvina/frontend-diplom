@@ -23,15 +23,15 @@ const Seat = ({title, count, price}) => {
     )
 }
 
-const Train = ({train, handleSearchSeats}) => {
+const Train = ({departure, handleSearchSeats}) => {
     const navigate = useNavigate();
 
     const handleChooseTrain = async (e) => {
         e.preventDefault();
         try {
-            const response = await api.getSeats(train.departure._id);
-            console.log(train);
-            handleSearchSeats(response, train.departure);
+            const response = await api.getSeats(departure._id);
+            console.log(departure);
+            handleSearchSeats(response, departure);
             navigate('/place-chooser');
         } catch (error) {
             console.error('Ошибка:', error);   
@@ -46,46 +46,49 @@ const Train = ({train, handleSearchSeats}) => {
             <div className='train-main'>
                 <div className='train-departure'>
                     <div className='train-departure-from'>
-                        <div className='train-departure-time'>{secondsToHoursMinutes(train.departure.from.datetime)}</div>
-                        <div className='train-departure-city'>{train.departure.from.city.name}</div>
-                        <div className='train-departure-station'>{train.departure.from.railway_station_name}</div>
+                        <div className='train-departure-time'>{secondsToHoursMinutes(departure.from.datetime)}</div>
+                        <div className='train-departure-city'>{departure.from.city.name}</div>
+                        <div className='train-departure-station'>{departure.from.railway_station_name}</div>
                     </div>
                     <div className='train-duration'>
-                        <div className='train-duration-time'>{secondsToHoursMinutes(train.departure.to.datetime - train.departure.from.datetime)}</div>
+                        <div className='train-duration-time'>{secondsToHoursMinutes(departure.to.datetime - departure.from.datetime)}</div>
                         <div className='train-diration-array'>
                             <img className="train-arrow-icon" src={`${process.env.PUBLIC_URL}/img/right-arrow.png`} alt="Стрелка вправо"/>
                         </div>
                     </div>
 
                     <div className='train-departure-to'>
-                        <div className='train-departure-time'>{secondsToHoursMinutes(train.departure.to.datetime)}</div>
-                        <div className='train-departure-city'>{train.departure.to.city.name}</div>
-                        <div className='train-departure-station'>{train.departure.to.railway_station_name}</div>
+                        <div className='train-departure-time'>{secondsToHoursMinutes(departure.to.datetime)}</div>
+                        <div className='train-departure-city'>{departure.to.city.name}</div>
+                        <div className='train-departure-station'>{departure.to.railway_station_name}</div>
                     </div>
                 </div>
             </div>
             <div className='train-places'>
-                {train.departure.have_first_class && (
+                {departure.have_first_class && (
                     <Seat title="Люкс" 
-                        count={train.available_seats_info.first}
-                        price={train.departure.price_info.first.bottom_price} />
+                        count={departure.available_seats_info.first}
+                        price={departure.price_info.first.bottom_price} />
                 )}
-                {train.departure.have_second_class && (
+                {departure.have_second_class && (
                     <Seat title="Купе" 
-                        count={train.available_seats_info.second}
-                        price={train.departure.price_info.second.bottom_price} />
+                        count={departure.available_seats_info.second}
+                        price={departure.price_info.second.bottom_price} />
                 )}
-                {train.departure.have_third_class && (
+                {departure.have_third_class && (
                     <Seat title="Плацкарт" 
-                        count={train.available_seats_info.third}
-                        price={train.departure.price_info.third.bottom_price} />
+                        count={departure.available_seats_info.third}
+                        price={departure.price_info.third.bottom_price} />
                 )}
-                {train.departure.have_fourth_class && (
+                {departure.have_fourth_class && (
                     <Seat title="Сидячий" 
-                        count={train.available_seats_info.fourth}
-                        price={train.departure.price_info.fourth.bottom_price} />
+                        count={departure.available_seats_info.fourth}
+                        price={departure.price_info.fourth.bottom_price} />
                 )}
-                <button className='search-seats-button' onClick={handleChooseTrain}>Выбрать место</button>
+                {
+                    handleSearchSeats &&
+                    <button className='search-seats-button' onClick={handleChooseTrain}>Выбрать место</button>
+                }
             </div>
         </div>
     )

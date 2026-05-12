@@ -27,8 +27,6 @@ const Payment = ({handlePayment}) => {
 
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
-        console.log(name);
-        console.log(value);
         setFormData(prev => ({ ...prev, [name]: type === 'checkbox' ? checked : value }));
     };
 
